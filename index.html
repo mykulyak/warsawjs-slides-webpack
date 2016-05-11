@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>WarsawJS Slides: WebPack.js - what is it and how to make it work</title>
+    <title>WarsawJS Slides: Webpack - what is it and how to make it work</title>
 
     <meta charset="utf-8"/>
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -17,7 +17,7 @@
 </head>
 <body class="shower list">
 <header class="caption">
-    <h1>WarsawJS Slides: WebPack.js - what is it and how to make it work</h1>
+    <h1>WarsawJS Slides: Webpack - what is it and how to make it work</h1>
 
     <p>We talk about JavaScript. Each month in Warsaw, Poland.</p>
 </header>
@@ -35,7 +35,7 @@
         <h2>Andriy Mykulyak</h2>
 
         <!-- 3. Presentation title -->
-        <h2><strong>"WebPack.js - what is it and how to make it work"</strong></h2>
+        <h2><strong>"Webpack - what is it and how to make it work"</strong></h2>
 
         <!-- 4. Presentation date -->
         <h2>2016-05-11</h2>
@@ -60,323 +60,299 @@
         </p>
 
         <p>
-            <span itemprop="knows">Full stack developer. Likes challenges. Wants to start in <a
+            <span itemprop="knows">Full stack developer. Likes challenges. Wants to finish in <a
                     href="https://en.wikipedia.org/wiki/Ironman_Triathlon">Ironman</a>.</span><br/>
         </p>
 
-        <p class="note">"Chance favors the prepared mind."</p>
+        <p class="note">"Do. Or do not. There is no try" (c) Yoda</p>
     </div>
 </section>
 
+<section class="slide">
+    <h2>What is Webpack ?</h2>
+    <ul>
+        <li class="next">A module bundler (Require.js, Browserify) ? <span class="next">Not only</span></li>
+        <li class="next">A task runner (Grunt.js, Gulp.js) ? <span class="next">Rather no</span></li>
+        <li class="next">A package manager (Npm.js) ? Certainly not</li>
+        <li class="next">It is a BUILD SYSTEM !</li>
+    </ul>
 
-
+    <blockquote class="next">Build systems are software tools designed to automate the process of
+        program compilation.
+    </blockquote>
+</section>
 
 <section class="slide">
-    <h2>Please update slides:</h2>
+    <h2>What can you use it for ?</h2>
     <ul>
-        <li>rename project at
-            <mark>GitHub</mark>
-            with snake-case convention
-        </li>
-        <li>
-            <mark>description</mark>
-            and
-            <mark>link</mark>
-            on GitHub repository profile
-        </li>
-        <li>link to
-            <mark>"Fork me on GitHub"</mark>
-            on the bottom of document
-        </li>
-        <li>setup presentation title in
-            <ul>
-                <li>
-                    <mark>&lt;title&gt;</mark>
-                    tag on the top of document in
-                    <mark>&lt;head&gt;</mark>
-                    tag
-                </li>
-                <li>
-                    <mark>README.md</mark>
-                    file
-                </li>
-                <li>
-                    <mark>&lt;h1&gt;</mark>
-                    tag at
-                    <mark>&lt;header&gt;</mark>
-                    tag on the top of document
-                </li>
-            </ul>
-        </li>
+        <li class="next">To build Web applications</li>
+        <li class="next">To build LARGE Web applications</li>
     </ul>
 </section>
 
 <section class="slide">
-    <h2>List Navigation</h2>
+    <h2>Advantages</h2>
     <ol>
-        <li>Ennui keffiyeh thundercats</li>
-        <li class="next">Jean shorts biodiesel</li>
-        <li class="next">Terry richardson, swag blog</li>
-        <li class="next">Locavore umami vegan helvetica</li>
-        <li class="next">Fingerstache kale chips</li>
+        <li class="next">CJS/AMD/UMD, custom module formats ? <span class="next">Yes it can</span></li>
+        <li class="next">Static assets ? <span class="next">Of course</span></li>
+        <li class="next">Dynamic module loading ? <span class="next">YES</span></li>
+        <li class="next">Integrates well (PHP, Java - server side, Grunt.js, Gulp.js etc.)</li>
+        <li class="next">Pre/post processors ? <span class="next">Surely</span></li>
+        <li class="next">Developer support ? <span class="next">Advanced (DevTools, Hot Module Replacement)</span></li>
+        <li class="next">And what about X, Y, or Z ? <span class="next">95% it can be done</span></li>
     </ol>
-    <p class="next">Before they sold out master</p>
 </section>
 
 <section class="slide">
-    <h2>Slide Header</h2>
-
-    <p>Echo Park 8-bit sustainable umami deep v Kickstarter. DIY cliche typewriter brunch, Odd Future sriracha pickled
-        aesthetic. Farm-to-table bespoke fingerstache, kale chips umami brunch letterpress.</p>
-
-    <p>Whatever authentic disrupt, you probably haven't heard of them direct trade mlkshk Etsy. Gluten-free roof party
-        plaid four loko quinoa.</p>
-
-    <p class="note">Echo Park 8-bit sustainable umami deep v Kickstarter.</p>
+    <h2>Disadvantages</h2>
+    <ul>
+        <li class="next">Documentation</li>
+    </ul>
 </section>
 
 <section class="slide">
-    <h2>Inline Elements</h2>
+    <h2>The IDEA</h2>
 
-    <p>Retro meh brunch <a href="">aesthetic</a> Cosby sweater Shoreditch. Banksy Tumblr
-        <strong>sriracha</strong>, flexitarian pug chia master cleanse vinyl
-        <em>wayfarers</em> fanny pack bespoke Helvetica <b>roof</b> party. Messenger bag retro cred
-        <i>Portland</i> next level. Yr stumptown Schlitz Carles deep v small batch. Hella sustainable messenger bag,
-        <mark>leggings</mark>
-        skateboard literally<sup>1</sup> bicycle rights H<sub>2</sub>0 mumblecore banh mi DIY VHS. Semiotics four loko
-        street art asymmetrical. Asymmetrical
-        <code>&lt;paleo&gt;</code> you probably haven’t heard of.
-    </p>
+    <p>Everything is a JavaScript module.</p>
 
-    <footer class="footer">
-        <p>Retro meh brunch <a href="">aesthetic</a> Cosby sweater Shoreditch. Banksy Tumblr
-            <strong>sriracha</strong>, flexitarian pug chia master cleanse vinyl
-            <em>wayfarers</em> fanny pack bespoke Helvetica <b>roof</b> party. Messenger bag retro cred
-            <i>Portland</i> next level. Yr stumptown Schlitz Carles deep v small batch. Hella sustainable messenger bag,
-            <mark>leggings</mark>
-            skateboard literally<sup>1</sup> bicycle rights H<sub>2</sub>0 mumblecore banh mi DIY VHS. Semiotics four
-            loko street art asymmetrical. Asymmetrical
-            <code>&lt;paleo&gt;</code> you probably haven’t heard of.
-        </p>
-    </footer>
+    <p>If something is not a JavaScript module, then make it one !</p>
 </section>
 
 <section class="slide">
-    <h2>Columns</h2>
+    <h2>Anatomy of a build</h2>
 
-    <p class="double">Echo Park 8-bit sustainable umami deep v Kickstarter. DIY cliche typewriter brunch, Odd Future
-        sriracha pickled aesthetic. Farm-to-table bespoke fingerstache, kale chips umami brunch American Apparel
-        letterpress. Whatever authentic disrupt, you probably haven't heard of them direct trade mlkshk Etsy.
-        Gluten-free roof party plaid American Apparel four loko quinoa. Echo Park 8-bit sustainable.</p>
-</section>
-
-<section class="slide">
-    <h2>Quotes</h2>
-    <blockquote>
-        <p>Flannel bicycle rights locavore selfies skateboard. Authentic fanny pack paleo four loko bespoke. Artisan
-            tattooed chia XOXO ennui, lomo disrupt 8-bit art party Tumblr scenester.</p>
-    </blockquote>
-    <figure>
-        <blockquote>
-            <p>Post-ironic fashion axe flexitarian, Tonx narwhal messenger bag Tumblr. Portland gentrify deep v kale
-                chips literally.</p>
-        </blockquote>
-        <figcaption>Yours Truly</figcaption>
-    </figure>
-</section>
-
-<section class="slide">
-    <h2>Nested Lists</h2>
+    <p>Meet our sample application</p>
     <ol>
-        <li>Literally viral vegan, ugh drinking vinegar photo booth</li>
-        <li>Wes Anderson chillwave Marfa pour-over Etsy banh mi</li>
-        <li>Ethnic polaroid lo-fi iPhone ennui
-            <ul>
-                <li>Yr wayfarers before they sold out Kickstarter asymmetrical</li>
-                <li>Irony flexitarian readymade quinoa, kogi bespoke meggings narwhal</li>
-                <li>Skateboard Etsy twee artisan Echo Park</li>
-            </ul>
+        <li>Two pages - login.html, main.html</li>
+        <li>Common code in a separate JS file - common.js</li>
+        <li>We're writing in ES6</li>
+        <li>A separate stylesheet file - screen.css</li>
+    </ol>
+</section>
+
+<section class="slide">
+    <h2>login.js, main.js</h2>
+    <pre style="font-size: 20px;" class="language-javascript line-numbers">
+        <code>
+            import App from './common';
+            require('./screen.scss');
+
+            class LoginApp extends App { ... }
+        </code>
+    </pre>
+    <pre style="font-size: 20px;" class="language-javascript line-numbers">
+        <code>
+            import App from './common';
+            require('./screen.scss');
+
+            class MainApp extends App { ... }
+        </code>
+    </pre>
+</section>
+
+<section class="slide">
+    <h2>common.js</h2>
+    <pre style="font-size: 20px;" class="language-javascript line-numbers">
+        <code>
+            import $ from 'some-external-lib';
+
+            class App {
+            ...
+            }
+        </code>
+    </pre>
+</section>
+
+<section class="prism slide">
+    <h2>webpack.config.js</h2>
+    <pre style="font-size: 20px;" class="language-javascript line-numbers">
+        <code>
+            {
+            entry: { login: './login', main: './main' },
+            output: { path: path.join(__dirname, 'dist/js'), filename: '[name].js' },
+            module: {
+                loaders: [
+                    { test: /\.js$/, loaders: [ 'babel-loader' ], query: { stage: 0 } },
+                    { test: /\.scss$/, loader: 'style!css!sass?outputStyle=expanded' }
+                ]
+            }
+            }
+        </code>
+    </pre>
+</section>
+
+<section class="slide">
+    <h2>Anatomy of a build configuration</h2>
+
+    <p>Webpack build is driven by configuration file. Its main sections:</p>
+    <ul>
+        <li><b>entry</b> - entry point specifications</li>
+        <li><b>output</b> - controls build output</li>
+        <li><b>module</b> - options affecting modules (loaders, contexts etc.)</li>
+        <li><b>resolve</b> - specifies how modules are resolved</li>
+        <li><b>plugins</b> - additional plugins used</li>
+    </ul>
+</section>
+
+<section clas="slide">
+    <h2>Anatomy of a build configuration - development</h2>
+    <ul>
+        <li><b>profile</b> - measure build timings</li>
+        <li><b>devtools</b> - tools for debugging</li>
+    </ul>
+</section>
+
+<section class="slide">
+    <h2>Multiple configurations</h2>
+
+    <p>Useful when multiple distributions should be built.</p>
+    <ul>
+        <li>Optimized for specific devices/software (mobile, desktop, legacy browsers, etc.)</li>
+        <li class="next">Localized application versions</li>
+        <li class="next">Optional (future) functionality</li>
+        <li class="next">Production and development builds</li>
+    </ul>
+</section>
+
+<section class="slide">
+    <h2>Multiple configurations during development</h2>
+    <ul>
+        <p>Multiple builds with different data sources.</p>
+        <ul>
+            <li>In-browser database</li>
+            <li>Mocked data on Express server (with <a
+                    href="https://webpack.github.io/docs/webpack-dev-middleware.html">webpack-dev-middleware</a>)
+            </li>
+            <li>Production server (with <a href="https://www.npmjs.com/package/proxy-middleware">proxy-middleware</a>)
+            </li>
+        </ul>
+    </ul>
+</section>
+
+<section class="slide">
+    <h2>API for modules</h2>
+
+    <ul>
+        <li><b>require(dep)</b> - (CJS) synchronously loads dependency</li>
+        <li><b>require.resolve(dep)</b> - (CJS) synchronously returns module ID of a dependency</li>
+        <li><b>require.ensure(deps, callback)</b> - (CJS) asynchronously loads dependencies and then calls the callback</li>
+    </ul>
+
+    <ul>
+        <li><b>define(name, deps, factory)</b> - (AMD) defines a module</li>
+        <li><b>define(value)</b> - (AMD) exports value</li>
+        <li><b>require(deps, callback)</b> - (AMD) asynchronously loads dependencies, then calls the callback</li>
+    </ul>
+</section>
+
+<section class="slide">
+    <h2>Loaders</h2>
+
+    <p>Loaders transform resources of our application, eventually transforming them into JavaScript.</p>
+    <ul>
+        <li>Loader is a function</li>
+        <li class="next">Loaders can be specified in the configuration, or in the module path</li>
+        <li class="next">Loaders can be chained, and be applied in a pipeline on the resource, starting with the
+            rightmost one.
         </li>
-        <li>Tonx kitsch fingerstache readymade, retro single-origin coffee</li>
+        <li class="next">There is a pitching phase before transforming with the left-to-right order or execution</li>
+        <li class="next">Loaders can be synchronous or asynchronous.</li>
+        <li class="next">Loaders can accept parameters via query</li>
+        <li class="next">Loaders are resolved similar to modules</li>
+    </ul>
+</section>
+
+<section class="slide">
+    <h2>Loaders - execution order</h2>
+    <ol>
+        <li>preloaders from configuration</li>
+        <li>loaders from configuration file</li>
+        <li>loaders in the require() call</li>
+        <li>postLoaders from configuration</li>
     </ol>
+    <p>Default rules can be overwritten in require() using !, !! or -! prefixes</p>
 </section>
 
 <section class="slide">
-    <h2>Simple Table</h2>
-    <table>
-        <tr>
-            <th scope="col">Gentrify</th>
-            <th>Twee</th>
-            <th>Artisan</th>
-            <th>Banksy</th>
-        </tr>
-        <tr>
-            <th scope="row">Messenger</th>
-            <td>Mixtape</td>
-            <td>Small batch</td>
-            <td>Bicycle rights</td>
-        </tr>
-        <tr>
-            <th scope="row">Meggings</th>
-            <td>Freegan</td>
-            <td>Retro biodiesel</td>
-            <td>Slow-carb</td>
-        </tr>
-        <tr>
-            <th scope="row">Vegan</th>
-            <td>Occupy</td>
-            <td>Normcore</td>
-            <td>Put a bird on it</td>
-        </tr>
-        <tr>
-            <th scope="row">Next level</th>
-            <td>Selfies</td>
-            <td>Sustainable</td>
-            <td>Organic</td>
-        </tr>
-        <tr>
-            <th scope="row">Umami</th>
-            <td>Asymmetrical</td>
-            <td>Keytar</td>
-            <td>Craft beer</td>
-        </tr>
-        <tr>
-            <th scope="row">Biodiesel</th>
-            <td>Haven’t heard</td>
-            <td>Skateboard</td>
-            <td>Farm-to-table</td>
-        </tr>
-    </table>
+    <h2>Existing loaders - I</h2>
+
+    <ul>
+        <li><b>json, xml, base64</b> - loads files in corresponding formats</li>
+        <li><b>file</b> - emits (copies) the file into output directory</li>
+        <li><b>img</b> - loads and copresses images</li>
+        <li><b>babel</b> - loads JS and transforms it with Babel</li>
+        <li><b>ts</b> - loads TypeScript modules</li>
+        <li><b>handlebar, ejs, mustache, jinja</b> - loads template files and compiles them</li>
+        <li><b>markdown</b> - compiles Markdown to HTML</li>
+    </ul>
 </section>
 
 <section class="slide">
-    <h2>Striped Table</h2>
-    <table class="striped">
-        <tr>
-            <th scope="col">Gentrify</th>
-            <th>Twee</th>
-            <th>Artisan</th>
-            <th>Banksy</th>
-        </tr>
-        <tr>
-            <th scope="row">Messenger</th>
-            <td>Mixtape</td>
-            <td>Small batch</td>
-            <td>Bicycle rights</td>
-        </tr>
-        <tr>
-            <th scope="row">Meggings</th>
-            <td>Freegan</td>
-            <td>Retro biodiesel</td>
-            <td>Slow-carb</td>
-        </tr>
-        <tr>
-            <th scope="row">Vegan</th>
-            <td>Occupy</td>
-            <td>Normcore</td>
-            <td>Put a bird on it</td>
-        </tr>
-        <tr>
-            <th scope="row">Next level</th>
-            <td>Selfies</td>
-            <td>Sustainable</td>
-            <td>Organic</td>
-        </tr>
-        <tr>
-            <th scope="row">Umami</th>
-            <td>Asymmetrical</td>
-            <td>Keytar</td>
-            <td>Craft beer</td>
-        </tr>
-        <tr>
-            <th scope="row">Biodiesel</th>
-            <td>Haven’t heard</td>
-            <td>Skateboard</td>
-            <td>Farm-to-table</td>
-        </tr>
-    </table>
+    <h2>Existing loaders - II</h2>
+
+    <ul>
+        <li><b>style</b> - adds style tags with content from this module</li>
+        <li><b>css</b> - resolves CSS imports, then returns file content</li>
+        <li><b>scss</b> - compiles and returns SCSS file</li>
+        <li><b>jshint, jslint, eslint, jscs</b> - static code analysis</li>
+        <li><b>csslint, scsslint</b> - static analysis for CSS and SCSS</li>
+        <li><b>postcss</b> - postprocessor for CSS</li>
+        <li><b>autoprefixer</b> - add vendor prefixes to CSS rules</li>
+    </ul>
 </section>
 
-<section class="slide prism">
-    <h2>Listing Slide</h2>
-
-        <pre style="font-size: 45px;" class="language-javascript line-numbers">
-            <code>
-                function wrap(value) {
-                return function () {
-                return value;
-                }
-                }
-
-                function bind(monad, f) {
-                return f(monad());
-                }
-            </code>
-        </pre>
+<section class="slide">
+    <h2>Loaders - the simplest synchronous loader</h2>
+    <pre style="font-size: 20px;" class="language-javascript line-numbers">
+        <code>
+            module.exports = function (resourceText) {
+                // this - loader context
+                // this.resolve(context, request, callback) - like require() for loaders
+                // this.addDependency(file) - adds given file as a dependency
+                return resourceText;
+            };
+        </code>
+    </pre>
 </section>
 
-<section class="slide prism">
-        <pre style="font-size: 30px;" class="language-javascript line-numbers">
-            <code>
-                var monad = wrap('cookie');
-                bind(monad, (value) => {
-                console.info(value);
-                return wrap(value);
+<section class="slide">
+    <h2>Loaders - an asynchronous loader</h2>
+    <pre style="font-size: 20px;" class="language-javascript line-numbers">
+        <code>
+            module.exports = function (resourceText) {
+                var done = this.async();
+                someAsyncOperation().then(function (data) {
+                    done(null, data);
+                }, function (err) {
+                    done(err);
                 });
-                monad = bind(monad, (value) => {
-                return wrap({ type: value });
-                });
-                bind(monad, (value) => {
-                console.log(value);
-                return wrap(value);
-                });
-            </code>
-        </pre>
+            };
+        </code>
+    </pre>
 </section>
 
 <section class="slide">
-    <h2 class="shout"><a href="">Linked</a> Shout</h2>
+    <h2>Plugins</h2>
+
+    <p>Plugins extend functionality of the Webpack engine. They can do practically everything with the resources, and
+        their dependency graph.</p>
 </section>
 
 <section class="slide">
-    <h2 class="shout grow">Effect: Growing Shout</h2>
+    <h2>Useful plugins</h2>
+
+    <ul>
+        <li><b>CommonsChunkPlugin</b> - Moves modules which exist in all chunks, to a separate chunk</li>
+        <li><b>MinChunkSizePlugin</b> - merges small chunks into larger one</li>
+        <li><b>UglifyJsPlugin</b> - minifies code using UglifyJS</li>
+        <li><b>DefinePlugin</b> - defines free variables inside modules</li>
+        <li><b>NoErrorsPlugin</b> - prevents generation of somehow broken modules</li>
+        <li><b>I18nPlugin</b> - embeds translation data into bundles</li>
+    </ul>
 </section>
 
 <section class="slide">
-    <h2 class="shout shrink">Effect: Shrinking Shout</h2>
-</section>
-
-<section class="slide">
-    <figure>
-        <img class="cover" src="vendors/shower-ribbon/pictures/exact.png" alt="">
-        <figcaption class="white">Copyright © 2016 <a href="">Yours Truly</a>, Famous Inc.</figcaption>
-    </figure>
-</section>
-
-<section class="slide">
-    <img class="cover" src="vendors/shower-ribbon/pictures/tall.png" alt="">
-</section>
-
-<section class="slide">
-    <img class="cover" src="vendors/shower-ribbon/pictures/wide.png" alt="">
-</section>
-
-<section class="slide white">
-    <img class="place top left" src="vendors/shower-ribbon/pictures/square.png" alt="">
-    <img class="place top" src="vendors/shower-ribbon/pictures/square.png" alt="">
-    <img class="place top right" src="vendors/shower-ribbon/pictures/square.png" alt="">
-
-    <img class="place left" src="vendors/shower-ribbon/pictures/square.png" alt="">
-    <img class="place" src="vendors/shower-ribbon/pictures/square.png" alt="">
-    <img class="place right" src="vendors/shower-ribbon/pictures/square.png" alt="">
-
-    <img class="place bottom left" src="vendors/shower-ribbon/pictures/square.png" alt="">
-    <img class="place bottom" src="vendors/shower-ribbon/pictures/square.png" alt="">
-    <img class="place bottom right" src="vendors/shower-ribbon/pictures/square.png" alt="">
-</section>
-
-<section class="slide" data-timing="00:03">
-    <h3 class="shout">Automatic switch slide after <strong>3 secs</strong> ...</h3>
+    <h3 class="shout">Thank you</h3>
 </section>
 
 <section class="slide">
