@@ -1,4 +1,4 @@
-# WarsawJS Slides: Template
+# WarsawJS Slides: Webpack - what is it and how to make it work
 
 ![Logo](/pictures/logo/warsawjs-logo-light.png)
 
